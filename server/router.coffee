@@ -7,7 +7,6 @@ Router.route '/stats', ->
 
 	Meteor.defer ->
 		statistics = _.pick statistics, [ "uniqueId", "version", "versionDate", "totalUsers", "activeUsers", "nonActiveUsers", "onlineUsers", "awayUsers", "offlineUsers", "totalRooms", "totalChannels", "totalPrivateGroups", "totalDirect", "totalMessages", "maxRoomUsers", "avgChannelUsers", "avgPrivateGroupUsers", "os", "createdAt" ]
-		console.log statistics
 	
 		for strField in [ "uniqueId", "version", "versionDate" ]
 			if statistics[strField]? and not _.isString statistics[strField]
