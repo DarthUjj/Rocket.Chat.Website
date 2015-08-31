@@ -17,7 +17,39 @@ Router.route '/stats', ->
 			if statistics[numField]? and not _.isNumber statistics[numField]
 				delete statistics[numField]
 
-		# @TODO: validate os and createdAt
+		os = _.pick statistics.os, [ "type", "platform", "arch", "release", "uptime", "totalmem", "freemem", "loadavg", "cpus" ]
+		for strField in [ "type", "platform", "arch", "release" ]
+			if os[strField]? and not _.isString os[strField]
+				delete os[strField]
+
+		for numField in [ "uptime", "totalmem", "freemem" ]
+			if os[numField]? and not _.isNumber os[numField]
+				delete os[numField]
+
+		if os.loadavg and _.isArray os.loadavg
+			for key, value of os.loadavg
+				if not _.isNumber value
+					delete os.loadavg
+					break
+		else
+			delete os.loadavg
+
+		if os.cpus and _.isArray os.cpus
+			for key, cpuObject of os.cpus
+				if not _.isObject cpuObject
+					delete os.cpus
+					break
+
+				if not _.isString cpuObject.model
+					delete os.cpus[key]
+					continue
+				if not _.isNumber cpuObject.speed
+					delete os.cpus[key]
+					continue
+
+				delete os.cpus[key].times
+		else
+			delete os.cpus
 
 		ClientStatistics.insert statistics
 	
