@@ -1,5 +1,5 @@
 Router.configure
-	layoutTemplate: 'master'
+	layoutTemplate: 'new-index'
 	notFoundTemplate: 'error'
 	onBeforeAction: ->
 		@next()
