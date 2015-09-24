@@ -6,11 +6,14 @@ Router.route '/stats', ->
 	console.log "Received Client Statistics: #{statistics?.uniqueId}"
 
 	Meteor.defer ->
-		statistics = _.pick statistics, [ "uniqueId", "version", "versionDate", "totalUsers", "activeUsers", "nonActiveUsers", "onlineUsers", "awayUsers", "offlineUsers", "totalRooms", "totalChannels", "totalPrivateGroups", "totalDirect", "totalMessages", "maxRoomUsers", "avgChannelUsers", "avgPrivateGroupUsers", "os", "createdAt" ]
+		statistics = _.pick statistics, [ "uniqueId", "version", "versionDate", "totalUsers", "activeUsers", "nonActiveUsers", "onlineUsers", "awayUsers", "offlineUsers", "totalRooms", "totalChannels", "totalPrivateGroups", "totalDirect", "totalMessages", "maxRoomUsers", "avgChannelUsers", "avgPrivateGroupUsers", "os", "createdAt", "host" ]
 	
-		for strField in [ "uniqueId", "version", "versionDate" ]
+		for strField in [ "uniqueId", "version", "versionDate", "host" ]
 			if statistics[strField]? and not _.isString statistics[strField]
 				delete statistics[strField]
+
+		if statistics['createdAt']?
+			statistics['createdAt'] = new Date(statistics['createdAt'])
 
 		for numField in [ "totalUsers", "activeUsers", "nonActiveUsers", "onlineUsers", "awayUsers", "offlineUsers", "totalRooms", "totalChannels", "totalPrivateGroups", "totalDirect", "totalMessages", "maxRoomUsers", "avgChannelUsers", "avgPrivateGroupUsers" ]
 			if statistics[numField]? and not _.isNumber statistics[numField]
