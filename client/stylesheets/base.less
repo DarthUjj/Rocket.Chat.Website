@@ -116,19 +116,48 @@ html, body{
 	width: 100%;
 	.transition(background-color .2s ease-out);
 	&.clean{
+		.logo{
+			i{
+				opacity: 0;
+				animation: none;
+				.transform(translateX(-25px) scale(0.4) rotate(120deg));
+			}
+		}
 		background-color: transparent;
+	}
+	&.animated{
+		animation: pulse 3.5s ease-out infinite;
 	}
 	.logo{
 		display: block;
-		text-indent: -9999em;
 		height: 100%;
 		width: 175px;
 		background-image: url(/images/logo/logo-type.svg?v=3);
 		background-size: 100% auto;
 		background-position: center center;
 		background-repeat: no-repeat;
-		margin-left: 8%;
+		margin-left: 10%;
 		margin-top: -1px;
+		position: relative;
+		@media all and (max-width: 600px){
+			margin-left: 20%;
+		}
+		span{
+			display: inline-block;
+			text-indent: -9999em;
+		}
+		i{
+			display: block;
+			height: 48px;
+			width: 48px;
+			background-image: url(/images/logo/icon.svg);
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			position: absolute;
+			left: -53px;
+			top: 6px;
+			.transition(transform .275s cubic-bezier(.7, 1, .6, 1.35), opacity .15s ease-out);
+		}
 	}
 	nav{
 		position: absolute;
