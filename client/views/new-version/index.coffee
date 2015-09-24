@@ -3,7 +3,7 @@ Template["new-index"].rendered = ->
 	win = $(window)
 	nav = $("#main-nav")
 	hidden = true
-	win.scroll ->
+	$("body, html").add(win).on "scroll", ->
 		scrl = win.scrollTop()
 		if scrl > 100
 			if hidden is true
