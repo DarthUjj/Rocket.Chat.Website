@@ -15,7 +15,6 @@ fastclick
 http
 jquery
 less
-meteor-platform
 reactive-dict
 reactive-var
 service-configuration
@@ -26,3 +25,16 @@ iron:router
 raix:handlebar-helpers
 underscorestring:underscore.string
 tap:i18n
+standard-minifiers
+meteor-base
+mobile-experience
+mongo
+blaze-html-templates
+session
+tracker
+logging
+reload
+random
+ejson
+spacebars
+check
