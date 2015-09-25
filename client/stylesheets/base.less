@@ -286,7 +286,33 @@ html, body{
 	}
 	awesome-button{
 		display: inline-block;
-		margin: 0 8px;
+		margin: 8px;
+	}
+	@media all and (max-width: 900px){
+		p br{
+			display: none;
+		}
+	}
+	@media all and (max-width: 600px){
+		h1{
+			font-size: 34px;
+			span:nth-child(1){
+				line-height: 38px;
+			}
+			span:nth-child(2){
+				font-size: 48px;
+			}
+		}
+		p{
+			font-size: 18px;
+		}
+		.rocket{
+			width: 150px;
+			height: 150px;
+		}
+		.access{
+			margin-top: 20px;
+		}
 	}
 }
 
@@ -297,12 +323,16 @@ html, body{
 	max-width: 755px;
 	width: 90%;
 	margin: 30px auto;
+	@media all and (max-width:680px){
+		margin: 20px auto;
+	}
 }
 
 .mockup{
 	max-width: 820px;
 	margin: -30px auto 22px;
 	width: 90%;
+	display: block;
 	@media all and (max-width: 640px){
 		margin: -20px auto 20px;
 	}
