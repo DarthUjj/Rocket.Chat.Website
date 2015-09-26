@@ -50,17 +50,6 @@
 
 <body>
 	{{#unless isPhantomJS}}
-		<script>
-			if(!document.head.createShadowRoot) {
-				(function(w, d, s) {
-					var f = d.getElementsByTagName(s)[0],
-						j = d.createElement(s);
-					j.async = true;
-					j.src = '//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.7.13/webcomponents.min.js';
-					f.parentNode.insertBefore(j, f);
-				})(window, document, 'script');
-			}
-		</script>
 		<!-- Google Tag Manager -->
 		<script>
 		(function(w, d, s, l, i) {
