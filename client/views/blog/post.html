@@ -1,0 +1,32 @@
+<template name="post">
+	<div id="rocket-post">
+		<section id="blog-post" class="blog-post">
+			<div class="wrapper">
+				{{#with post}}
+				<article class="page-section blog-post">
+					<div class="wrapper">
+						<header>
+							<h1>{{title}}</h1>
+							<small>por {{_user.[0].name}} em {{_createdAt}}</small>
+							<div class="tags">
+								{{#if tags}}
+									<ul>
+										{{#each tags}}
+											<li>{{.}}</li>
+										{{/each}}
+									</ul>
+								{{/if}}
+							</div>
+							<a class="-btn small gray back-to" href="/blog"><span><i class='fa fa-chevron-left'></i> Voltar para a listagem</span></a>
+							{{> sharer}}
+						</header>
+						<div class="content -box">
+							{{{body}}}
+						</div>
+					</div>
+				</article>
+				{{/with}}
+			</div>
+		</section>
+	</div>
+</template>
