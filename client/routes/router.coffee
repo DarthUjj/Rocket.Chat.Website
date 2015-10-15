@@ -1,5 +1,5 @@
 Router.configure
-	layoutTemplate: 'new-index'
+	layoutTemplate: 'layout'
 	notFoundTemplate: 'error'
 	onBeforeAction: ->
 		@next()
@@ -13,8 +13,12 @@ Router.route '/',
 	action: ->
 		this.render 'index'
 
-Router.route '/privacy',
-	name: "privacy"
-	data: {}
+Router.route '/blog',
+	name: 'blog'
 	action: ->
-		this.render 'privacy'
+		this.render('blog')
+
+Router.route '/blog/:code/:slug?',
+	name: 'blog-post'
+	action: ->
+		this.render('post')

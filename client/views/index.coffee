@@ -1,4 +1,4 @@
-Template["new-index"].events
+Template.index.events
 	"click #main-nav nav a" : (event) ->
 		event.preventDefault()
 		event.stopPropagation()
@@ -8,7 +8,7 @@ Template["new-index"].events
 
 
 
-Template["new-index"].rendered = ->
+Template.index.rendered = ->
 	win = $(window)
 	nav = $("#main-nav")
 	hidden = true
