@@ -1,5 +1,5 @@
 <template name="postCard">
-	<a href='{{pathFor "blog-post" code=code slug=slug}}' class="unit {{#if $.Session.equals 'currentBlogPost' _id}}active{{/if}}" data-id="{{_id}}">
+	<a href='{{pathFor "blog-post" slug=slug}}' class="unit {{#if $.Session.equals 'currentBlogPost' _id}}active{{/if}}" data-id="{{_id}}">
 		{{#if images}}
 			<div class="thumb" style="background-image:url({{cdnImage images 380 240 crop false}});"></div>
 		{{else}}

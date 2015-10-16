@@ -6,15 +6,16 @@ Template.post.helpers
 		return moment(this._createdAt).format("DD/MM/YYYY")
 
 	body: ->
-		return Spacebars.SafeString @body.replace(/http:\/\/cdn-my.konecty.com/g,'//dlil52wgx3qln.cloudfront.net').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2')
+		return Spacebars.SafeString @body?.replace(/http:\/\/cdn-my.konecty.com/g,'//dlil52wgx3qln.cloudfront.net').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + '<br>' + '$2')
 
 Template.post.onCreated ->
 	tpl = @
 	tpl.post = new ReactiveVar
 
-	code = parseInt Router.current().params['code']
+	slug = Router.current().params['slug']
 
-	Meteor.call 'Konecty.findOneByCode', 'BlogPost', code, (err, result) ->
+	Meteor.call 'Blog.findOne', slug, (err, result) ->
+		return toastr.error err.reason if err
 		tpl.post.set result
 
 Template.post.onRendered ->

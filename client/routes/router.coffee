@@ -18,7 +18,7 @@ Router.route '/blog',
 	action: ->
 		this.render('blog')
 
-Router.route '/blog/:code/:slug?',
+Router.route '/blog/:slug',
 	name: 'blog-post'
 	action: ->
 		this.render('post')
