@@ -6,7 +6,7 @@ Template.index.events
 		el = $(document.getElementById(hash))
 		$(window).add($("html,body")).animate({scrollTop: el.position().top}, 500)
 
-Template.index.rendered = ->
+Template.index.onRendered ->
 	win = $(window)
 	nav = $("#main-nav")
 	hidden = true
@@ -23,7 +23,9 @@ Template.index.rendered = ->
 				hidden = true
 				nav.addClass("clean")
 
-	PageLoader.clear()
-
 	particlesJS.load 'particles-js', '/scripts/particles.json', ->
 		# lol
+
+Template.index.onDestroyed ->
+	win = $(window)
+	win.off 'scroll'

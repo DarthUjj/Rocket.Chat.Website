@@ -75,6 +75,3 @@ Template.blog.onCreated ->
 					$(window).scrollTop(parseInt(Session.get('currentBlogPostPos')))
 				else if Session.get('currentBlogPost') and $("[data-id=#{Session.get('currentBlogPost')}]").length
 					$(window).scrollTop($("[data-id=#{Session.get('currentBlogPost')}]").offset().top - ($(window).height()/2) + 50)
-
-Template.blog.onRendered ->
-	PageLoader.clear()
