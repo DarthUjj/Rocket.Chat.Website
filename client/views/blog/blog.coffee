@@ -1,8 +1,8 @@
 Blog =
 	pageSize: 6
 	categories: [
-		"Features"
-		"Mentions"
+		"Feature"
+		"Mention"
 	]
 	filters: [
 		{
@@ -10,8 +10,8 @@ Blog =
 			icon: 'map-marker'
 			rel: 'categories'
 			categories: [
-				"Features"
-				"Mentions"
+				"Feature"
+				"Mention"
 			]
 		}
 	]

@@ -1,12 +1,10 @@
 Template.index.events
-	"click #main-nav nav a" : (event) ->
+	"click #main-nav nav a[data-jump]" : (event) ->
 		event.preventDefault()
 		event.stopPropagation()
 		hash = event.currentTarget.href.replace(/(.*)#(.*)/, "$2")
 		el = $(document.getElementById(hash))
 		$(window).add($("html,body")).animate({scrollTop: el.position().top}, 500)
-
-
 
 Template.index.rendered = ->
 	win = $(window)
