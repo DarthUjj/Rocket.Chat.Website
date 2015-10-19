@@ -22,3 +22,8 @@ Router.route '/blog/:slug',
 	name: 'blog-post'
 	action: ->
 		this.render('post')
+
+Router.route '/contact',
+	name: 'contact'
+	action: ->
+		this.render('contact')
