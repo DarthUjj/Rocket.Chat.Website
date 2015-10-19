@@ -1,7 +1,4 @@
 <template name="blog">
-	<div id="main-nav">
-		<div class="logo"><a href="{{pathFor 'index'}}"><i></i><span>Rocket.Chat</span></a></div>
-	</div>
 	<div id="rocket-blog">
 		<section id="blog-header" class="header">
 			<div class="wrapper">
@@ -19,19 +16,17 @@
 					<i class="fa fa-search"></i>
 				</div>
 				<div class="filters">
-					{{#each blogFilters}}
-						<div data-rel="{{rel}}" class="filter">
-							<h3><i class='fa fa-{{icon}}'></i> {{name}}</h3>
-							<div class="categories">
-								{{#each categories}}
-									<label class="{{selected ../rel .}}">
-										<input type="checkbox" value="{{.}}" rel="{{../rel}}" checked="{{checked ../rel .}}">
-										<span>{{.}}</span>
-									</label>
-								{{/each}}
-							</div>
+					<div data-rel="categories" class="filter">
+						<h3><i class='fa fa-map-marker'></i> Categories</h3>
+						<div class="categories">
+							{{#each categories}}
+								<label>
+									<input type="checkbox" value="{{.}}" rel="categories" checked="{{checked .}}">
+									<span>{{.}}</span>
+								</label>
+							{{/each}}
 						</div>
-					{{/each}}
+					</div>
 				</div>
 			</div>
 		</section>

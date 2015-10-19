@@ -7,18 +7,25 @@ Meteor.methods
 				code: -1
 			]
 
+		tagsConditions = []
+		if tags.indexOf('None') isnt -1
+			tagsConditions.push
+				term: 'tags'
+				operator: 'exists'
+				value: false
+
+		delete tags['None']
+		if tags.length
+			tagsConditions.push
+				term: 'tags'
+				operator: 'in'
+				value: tags
+
+
 		data.filter =
 			filters: [
 				match: 'or'
-				conditions: [
-					term: 'tags'
-					operator: 'exists'
-					value: false
-				,
-					term: 'tags'
-					operator: 'in'
-					value: tags
-				]
+				conditions: tagsConditions
 			]
 
 		if s.trim query
@@ -28,7 +35,6 @@ Meteor.methods
 				value: s.trim query
 			]
 
-		console.log JSON.stringify data, null, ' '
 		results = Konecty.findAll data
 		if results.success is true
 			return results
@@ -51,3 +57,10 @@ Meteor.methods
 			return results?.data?[0]
 		else
 			throw new Meteor.Error 'konecty-error', results?.errors?[0]?.message
+
+	'Blog.findDistinct': (field) ->
+		data =
+			document: 'BlogPost'
+			field: field
+
+		return Konecty.findDistinct data

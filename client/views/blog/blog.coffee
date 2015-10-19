@@ -1,21 +1,3 @@
-Blog =
-	pageSize: 6
-	categories: [
-		"Feature"
-		"Mention"
-	]
-	filters: [
-		{
-			name: 'Categories'
-			icon: 'map-marker'
-			rel: 'categories'
-			categories: [
-				"Feature"
-				"Mention"
-			]
-		}
-	]
-
 Template.blog.helpers
 	posts: ->
 		return Template.instance().posts?.get()
@@ -23,15 +5,16 @@ Template.blog.helpers
 		return Template.instance().total?.get() > Template.instance().posts?.get()?.length
 	blogFilters: ->
 		return Blog.filters
-	checked: (rel, value) ->
-		return true
-	selected: (rel, value) ->
-		return "selected"
+	checked: (value) ->
+		tags = Session.get('blogTags')
+		return tags.indexOf(value) isnt -1
+	categories: ->
+		return Template.instance().tags?.get()
 
 Template.blog.events
 	'click .load-more button': (e) ->
 		e.preventDefault()
-		Session.set('blogLimit', Session.get('blogLimit') + Blog.pageSize)
+		Session.set('blogLimit', Session.get('blogLimit') + 6)
 
 	'mousedown a.unit': (e) ->
 		id = $(e.currentTarget).data('id')
@@ -55,10 +38,17 @@ Template.blog.onCreated ->
 	tpl = @
 	tpl.posts = new ReactiveVar
 	tpl.total = new ReactiveVar
+	tpl.tags = new ReactiveVar []
 
-	Session.setDefault('blogLimit', Blog.pageSize)
+	Session.setDefault('blogLimit', 6)
 	Session.setDefault('blogSearch', '')
-	Session.setDefault('blogTags', Blog.categories)
+	Session.setDefault('blogTags', [])
+
+	Meteor.call 'Blog.findDistinct', 'tags', (err, results) ->
+		results.unshift('None')
+
+		tpl.tags.set results
+		Session.set 'blogTags', results
 
 	@autorun ->
 		query = Session.get('blogSearch')
