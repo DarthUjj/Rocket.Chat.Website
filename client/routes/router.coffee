@@ -21,5 +21,6 @@ Router.route '/privacy',
 
 Router.route '/statistics',
 	name: 'statistics'
+	layoutTemplate: ''
 	action: ->
 		this.render('stats')
