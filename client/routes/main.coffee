@@ -18,3 +18,8 @@ Router.route '/privacy',
 	data: {}
 	action: ->
 		this.render 'privacy'
+
+Router.route '/statistics',
+	name: 'statistics'
+	action: ->
+		this.render('stats')
