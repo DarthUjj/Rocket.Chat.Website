@@ -8,7 +8,7 @@
 		"error_file": "/var/log/rocket.chat/err.log",
 		"port": "8000",
 		"env": {
-			"MONGO_URL": "mongodb://localhost:27017/rocketchatwebsite",
+			"MONGO_URL": "mongodb://localhost:27017/rocketchat",
 			"MONGO_OPLOG_URL": "mongodb://localhost:27017/local",
 			"ROOT_URL": "https://rocket.chat",
 			"DDP_DEFAULT_CONNECTION_URL": "https://rocket.chat",
