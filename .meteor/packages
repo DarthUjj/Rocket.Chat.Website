@@ -40,4 +40,5 @@ spacebars
 check
 momentjs:moment
 chrismbeckett:toastr
-d3
+monbro:mongodb-mapreduce-aggregation
+nvd3:nvd3
