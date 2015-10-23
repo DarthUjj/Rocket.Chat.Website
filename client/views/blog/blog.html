@@ -16,12 +16,12 @@
 					<i class="fa fa-search"></i>
 				</div>
 				<div class="filters">
-					<div data-rel="categories" class="filter">
-						<h3><i class='fa fa-map-marker'></i> Categories</h3>
-						<div class="categories">
-							{{#each categories}}
+					<div data-rel="tags" class="filter">
+						<h3><i class='fa fa-map-marker'></i> Tags</h3>
+						<div class="tags">
+							{{#each tags}}
 								<label>
-									<input type="checkbox" value="{{.}}" rel="categories" checked="{{checked .}}">
+									<input type="checkbox" value="{{.}}" rel="tags" checked="{{checked .}}">
 									<span>{{.}}</span>
 								</label>
 							{{/each}}
@@ -43,7 +43,7 @@
 						</div>
 					{{/if}}
 				{{else}}
-					<div class="section-loader"></div>
+					<div class="section-loader">Loading...</div>
 				{{/if}}
 			</div>
 		</section>

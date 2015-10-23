@@ -14,9 +14,11 @@ Template.post.onCreated ->
 
 	slug = Router.current().params['slug']
 
-	Meteor.call 'Blog.findOne', slug, (err, result) ->
-		return toastr.error err.reason if err
-		tpl.post.set result
+	@autorun ->
+		tpl.subscription = tpl.subscribe 'blogPost', slug, (err) ->
+			return toastr.error err.reason if err
+			if tpl.subscription.ready()
+				tpl.post.set BlogPost.findOne({ slug: slug })
 
 Template.post.onRendered ->
 	PageLoader.clear()
