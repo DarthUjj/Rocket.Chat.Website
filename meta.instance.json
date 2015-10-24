@@ -1,0 +1,123 @@
+{
+  "_id": "rocketchat:Instance",
+  "fields": [
+    {
+      "type": "autoNumber",
+      "name": "code",
+      "label": {
+        "pt_BR": "Código",
+        "en": "Code"
+      },
+      "isUnique": true,
+      "isSortable": true
+    },
+    {
+      "label": {
+        "en": "Name",
+        "pt_BR": "Nome"
+      },
+      "isSortable": true,
+      "type": "text",
+      "name": "name"
+    },
+    {
+      "type": "email",
+      "isSortable": true,
+      "isTypeOptionsEditable": true,
+      "label": {
+        "en": "Email",
+        "pt_BR": "Email"
+      },
+      "name": "email"
+    },
+    {
+      "label": {
+        "en": "Domain",
+        "pt_BR": "Domínio"
+      },
+      "isSortable": true,
+      "isUnique": true,
+      "type": "url",
+      "name": "domain"
+    },
+    {
+      "type": "dateTime",
+      "name": "_createdAt",
+      "label": {
+        "en": "Created At",
+        "pt_BR": "Criado em"
+      },
+      "isSortable": true
+    },
+    {
+      "type": "lookup",
+      "name": "_createdBy",
+      "label": {
+        "en": "Created by",
+        "pt_BR": "Criado por"
+      },
+      "isSortable": true,
+      "document": "User",
+      "descriptionFields": [
+        "name",
+        "group.name"
+      ]
+    },
+    {
+      "type": "dateTime",
+      "name": "_updatedAt",
+      "label": {
+        "en": "Updated At",
+        "pt_BR": "Atualizado em"
+      },
+      "isSortable": true
+    },
+    {
+      "type": "lookup",
+      "name": "_updatedBy",
+      "label": {
+        "en": "Updated by",
+        "pt_BR": "Atualizado por"
+      },
+      "document": "User",
+      "descriptionFields": [
+        "name",
+        "group.name"
+      ]
+    },
+    {
+      "descriptionFields": [
+        "name",
+        "group.name",
+        "active"
+      ],
+      "detailFields": [
+        "phone",
+        "emails"
+      ],
+      "type": "lookup",
+      "name": "_user",
+      "label": {
+        "en": "User",
+        "pt_BR": "Usuário"
+      },
+      "isSortable": true,
+      "isList": true,
+      "document": "User"
+    }
+  ],
+  "icon": "code-fork",
+  "label": {
+    "en": "Instances",
+    "pt_BR": "Instâncias"
+  },
+  "menuSorter": 1,
+  "name": "Instance",
+  "namespace": "rocketchat",
+  "plurals": {
+    "en": "Instances",
+    "pt_BR": "Instâncias"
+  },
+  "saveHistory": true,
+  "type": "document"
+}

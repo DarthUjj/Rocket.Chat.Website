@@ -1,0 +1,36 @@
+<template name="deploy">
+	<section class="page-section">
+		<div class="wrapper">
+			<header>
+				<h1>Deploy your own instance in seconds!</h1>
+			</header>
+			<div class="static-content">
+				<div class="deploy -box">
+					<form id="deployForm">
+						<div>
+							<label for="name">Application Name</label>
+							<div>
+								<input type="text" id="name" name="name">
+							</div>
+						</div>
+						<div>
+							<label for="email">Email</label>
+							<div>
+								<input type="email" id="email" name="email">
+							</div>
+						</div>
+						<div>
+							<label for="domain">Domain</label>
+							<div>
+								http://<input type="text" id="domain" name="domain">.rocket.chat
+							</div>
+						</div>
+						<div class="submit">
+							<button type="submit" class="-btn primary"><span>Deploy my instance</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

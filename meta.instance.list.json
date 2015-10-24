@@ -1,0 +1,139 @@
+{
+  "_id": "rocketchat:Instance:list:Default",
+  "document": "Instance",
+  "label": {
+    "en": "Instance",
+    "pt_BR": "Instância"
+  },
+  "name": "Default",
+  "namespace": "rocketchat",
+  "plurals": {
+    "en": "Instances",
+    "pt_BR": "Instâncias"
+  },
+  "columns": {
+    "code": {
+      "name": "code",
+      "linkField": "code",
+      "visible": true,
+      "sort": 1
+    },
+    "name": {
+      "name": "name",
+      "linkField": "name",
+      "visible": true,
+      "sort": 2
+    },
+    "email": {
+      "name": "email",
+      "linkField": "email",
+      "visible": true,
+      "sort": 3
+    },
+    "domain": {
+      "name": "domain",
+      "linkField": "domain",
+      "visible": true,
+      "sort": 4
+    },
+    "_createdBy": {
+      "linkField": "_createdBy",
+      "minWidth": 200,
+      "name": "_createdBy",
+      "sort": 5
+    },
+    "_updatedAt": {
+      "minWidth": 100,
+      "name": "_updatedAt",
+      "linkField": "_updatedAt",
+      "sort": 6
+    },
+    "_updatedBy": {
+      "name": "_updatedBy",
+      "linkField": "_updatedBy",
+      "minWidth": 200,
+      "sort": 7
+    },
+    "_user": {
+      "name": "_user",
+      "linkField": "_user",
+      "minWidth": 200,
+      "sort": 8
+    }
+  },
+  "filter": {
+    "match": "and",
+    "conditions": {
+      "code:equals": {
+        "term": "code",
+        "operator": "equals",
+        "editable": true,
+        "disabled": true,
+        "style": {
+          "renderAs": "numberfield"
+        },
+        "sort": 1
+      },
+      "name:contains": {
+        "term": "name",
+        "operator": "contains",
+        "editable": true,
+        "disabled": true,
+        "style": {
+          "renderAs": "textfield"
+        },
+        "sort": 1
+      },
+      "email:contains": {
+        "term": "email",
+        "operator": "contains",
+        "editable": true,
+        "disabled": true,
+        "style": {
+          "renderAs": "textfield"
+        },
+        "sort": 2
+      },
+      "domain:contains": {
+        "term": "domain",
+        "operator": "contains",
+        "editable": true,
+        "disabled": true,
+        "style": {
+          "renderAs": "textfield"
+        },
+        "sort": 2
+      }
+    }
+  },
+  "type": "list",
+  "view": "Default",
+  "loadDataAtOpen": true,
+  "refreshRate": {
+    "options": [
+      0
+    ],
+    "default": 0
+  },
+  "rowsPerPage": {
+    "options": [
+      5,
+      10,
+      15,
+      20,
+      25,
+      50,
+      100,
+      200,
+      500,
+      1000
+    ],
+    "default": 100
+  },
+  "sorters": [
+    {
+      "term": "code",
+      "direction": "asc"
+    }
+  ]
+}

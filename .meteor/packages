@@ -39,3 +39,5 @@ ejson
 spacebars
 check
 momentjs:moment
+chrismbeckett:toastr
+ddp-rate-limiter
