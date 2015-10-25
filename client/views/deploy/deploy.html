@@ -1,30 +1,33 @@
 <template name="deploy">
 	<section class="deploy-section">
 		<div class="internal-panel">
-			<h1>
-				Deploy your own instance in seconds!
-			</h1>
 			<form id="deployForm">
 				{{#if $eq section 'email'}}
+					<h1>
+						Deploy your own instance in seconds!
+					</h1>
 					<div>
 						<label for="email">Enter your <b>e-mail address</b></label>
 						<div>
-							<input type="email" id="email" name="email" placeholder="you@yourdomain.com">
+							<input type="email" id="email" name="email" placeholder="you@yourdomain.com" value="{{value.email}}">
 						</div>
 					</div>
 
 					<div class="buttons-section">
-						<button type="button" class="button teal button-next">
+						<button class="button teal button-next">
 							Next <i class="icon-right-open"></i>
 						</button>
 					</div>
 				{{/if}}
 
 				{{#if $eq section 'name'}}
+					<h1>
+						Deploy your own instance in seconds!
+					</h1>
 					<div>
 						<label for="name"><b>Application name</b></label>
 						<div>
-							<input type="text" id="name" name="name" placeholder="Ex. My awesome chat">
+							<input type="text" id="name" name="name" placeholder="Ex. My awesome chat" value="{{value.name}}">
 						</div>
 					</div>
 
@@ -32,18 +35,21 @@
 						<button type="button" class="button gray button-icon-left button-back">
 							<i class="icon-left-open"></i> Back
 						</button>
-						<button type="button" class="button teal button-next">
+						<button class="button teal button-next">
 							Next <i class="icon-right-open"></i>
 						</button>
 					</div>
 				{{/if}}
 
 				{{#if $eq section 'domain'}}
+					<h1>
+						Deploy your own instance in seconds!
+					</h1>
 					<div>
 						<label for="domain"><b>Your Rocket.Chat URL</b></label>
 						<div>
 							<div class="input">
-								http://<div class="editable" contenteditable>asd</div>.rocket.chat
+								http://<div class="editable" onfocus="document.execCommand('selectAll',false,null)" contenteditable>{{value.domain}}</div>.rocket.chat
 							</div>
 						</div>
 					</div>
@@ -54,6 +60,20 @@
 						<button class="button blue">
 							Finish <i class="icon-right-open"></i>
 						</button>
+					</div>
+				{{/if}}
+
+				{{#if $eq section 'deployed'}}
+					<h1>
+						Instance Deployed!
+					</h1>
+					<div style="text-align: center;">
+						<b>This is your own chat instance:</b>
+						<br>
+						<br>
+						<div>
+							<a class="button blue" href="http://{{value.domain}}.rocket.chat">http://{{value.domain}}.rocket.chat</a>
+						</div>
 					</div>
 				{{/if}}
 			</form>
