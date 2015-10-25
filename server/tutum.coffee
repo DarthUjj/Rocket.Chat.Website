@@ -48,6 +48,10 @@
 				key: 'TUTUM_CLIENT_HOST'
 				value: name + ".rocket.chat"
 			}
+			{
+				key: 'ROOT_URL'
+				value: 'http://' + name + ".rocket.chat"
+			}
 		]
 		data.linked_to_service = [
 			{
