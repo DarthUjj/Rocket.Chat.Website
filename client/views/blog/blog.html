@@ -1,0 +1,51 @@
+<template name="blog">
+	<div id="rocket-blog">
+		<section id="blog-header" class="header">
+			<div class="wrapper">
+				<h1>
+					<span>Rocket.Chat</span>
+					<span>Blog</span>
+				</h1>
+			</div>
+		</section>
+
+		<section id="blog-filters" class="blog-filters">
+			<div class="wrapper">
+				<div class="search">
+					<input autocomplete="off" type="text" name="search" placeholder="Search posts" value="{{textSearch}}" />
+					<i class="fa fa-search"></i>
+				</div>
+				<div class="filters">
+					<div data-rel="tags" class="filter">
+						<h3><i class='fa fa-map-marker'></i> Tags</h3>
+						<div class="tags">
+							{{#each tags}}
+								<label>
+									<input type="checkbox" value="{{.}}" rel="tags" checked="{{checked .}}">
+									<span>{{.}}</span>
+								</label>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="blog-posts" class="blog-posts">
+			<div class="wrapper">
+				{{#each posts}}
+					{{> postCard}}
+				{{/each}}
+				{{#if Template.subscriptionsReady}}
+					{{#if hasMore}}
+						<div class="load-more">
+							<button class="-btn primary large"><span><i class='fa fa-reload'></i>Load more</span></button>
+						</div>
+					{{/if}}
+				{{else}}
+					<div class="section-loader">Loading...</div>
+				{{/if}}
+			</div>
+		</section>
+	</div>
+</template>

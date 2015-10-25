@@ -1,14 +1,12 @@
-Template["new-index"].events
-	"click #main-nav nav a" : (event) ->
+Template.index.events
+	"click #main-nav nav a[data-jump]" : (event) ->
 		event.preventDefault()
 		event.stopPropagation()
 		hash = event.currentTarget.href.replace(/(.*)#(.*)/, "$2")
 		el = $(document.getElementById(hash))
 		$(window).add($("html,body")).animate({scrollTop: el.position().top}, 500)
 
-
-
-Template["new-index"].rendered = ->
+Template.index.onRendered ->
 	win = $(window)
 	nav = $("#main-nav")
 	hidden = true
@@ -25,7 +23,9 @@ Template["new-index"].rendered = ->
 				hidden = true
 				nav.addClass("clean")
 
-	PageLoader.clear()
-
 	particlesJS.load 'particles-js', '/scripts/particles.json', ->
 		# lol
+
+Template.index.onDestroyed ->
+	win = $(window)
+	win.off 'scroll'
