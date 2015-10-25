@@ -1,0 +1,39 @@
+<template name="contact">
+	<section class="page-section">
+		<div class="wrapper">
+			<header>
+				<h1>Get in touch</h1>
+				<p><a href="mailto:support@rocket.chat" target="_blank">support@rocket.chat</a></p>
+			</header>
+			<div class="static-content">
+				<div class="message -box">
+					<h2>Leave a message</h2>
+					<p>We'll get in touch as soon as possible.</p>
+					<form id="contactForm">
+						<div>
+							<label for="name">Name</label>
+							<div>
+								<input type="text" id="name" name="name">
+							</div>
+						</div>
+						<div>
+							<label for="email">Email</label>
+							<div>
+								<input type="email" id="email" name="email">
+							</div>
+						</div>
+						<div>
+							<label for="message">Message</label>
+							<div>
+								<textarea id="message" name="message" rows="6"></textarea>
+							</div>
+						</div>
+						<div class="submit">
+							<button type="submit" class="-btn primary"><span>Send Message</span></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+</template>

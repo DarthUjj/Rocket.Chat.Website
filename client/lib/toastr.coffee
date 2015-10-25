@@ -1,0 +1,15 @@
+toastr.options =
+	closeButton: true
+	debug: false
+	progressBar: false
+	positionClass: "toast-top-center"
+	onclick: null
+	showDuration: 300
+	hideDuration: 300
+	timeOut: 5000
+	extendedTimeOut: 1000
+	showEasing: "swing"
+	hideEasing: "linear"
+	showMethod: "fadeIn"
+	hideMethod: "fadeOut"
+	target: "#error-container"

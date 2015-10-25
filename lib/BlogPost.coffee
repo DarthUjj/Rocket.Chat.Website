@@ -1,0 +1,1 @@
+@BlogPost = new Mongo.Collection 'data.BlogPost'

@@ -1,29 +1,194 @@
 <template name="index">
-	<div class='text'>
-		<h1>RocketChat</h1>
-		<h2>{{_ "Your_Open_Source_solution"}}</h2>
+	<div id="main-nav" class="clean">
+		<div class="logo"><i></i><span>Rocket.Chat</span></div>
+		<nav>
+			<a href="#live-demo" data-jump="true">Live Demo</a>
+			<a href="#features" data-jump="true">Features</a>
+			<a href="#rocket-team" data-jump="true">Rocket Team</a>
+			<a href="{{pathFor 'blog'}}">Blog</a>
+			<a href="{{pathFor 'contact'}}">Contact</a>
+		</nav>
 	</div>
-	<a href="https://demo.rocket.chat" class="screen">
-		<span>
-			<i></i>
-			<i></i>
-			<i></i>
-		</span>
-		<figure>
-		</figure>
-		<button class="button red"><span>{{_ "Access_online_demo"}}</span></button>
-	</a>
-	<div class='text'>
-		<p>{{_ "Have_your_own_chat"}}</p>
+	<div id="rocket-website">
+		<section class="splash">
+			<div class="wrapper">
+				<a href='https://demo.rocket.chat' target='_blank' title="Access the live demo" class="rocket">Rocket.Chat</a>
+				<h1>
+					<span>The Ultimate Open Source</span>
+					<span>Web Chat Platform</span>
+				</h1>
+				<p>From group messages and video calls all the way to helpdesk killer features.<br/> Our goal is to become the number one cross-platform open source chat solution.</p>
+				<div class="downloads">
+					<a class="cf_ apple" target="_blank" href="https://geo.itunes.apple.com/us/app/rocket.chat/id1028869439?mt=8">
+						<img src="/images/download/apple.svg" />
+						<div>
+							<span>Download on the</span>
+							<strong>App Store</strong>
+						</div>
+					</a>
+					<a class="cf_ google" target="_blank" href="https://play.google.com/store/apps/details?id=com.konecty.rocket.chat">
+						<img src="/images/download/google-play.svg" />
+						<div>
+							<span>Get it on</span>
+							<strong>Google Play</strong>
+						</div>
+					</a>
+					<a class="cf_ apple" target="_blank" href="https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/v0.0.8/rocketchat-0.0.8-mac.dmg">
+						<img src="/images/download/apple.svg" />
+						<div>
+							<span>Download for</span>
+							<strong>Mac OS X</strong>
+						</div>
+					</a>
+					<a class="cf_" target="_blank" href="https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/v0.0.7/rocketchat-0.0.7-win32.exe">
+						<img src="/images/download/windows.svg" />
+						<div>
+							<span>Download for</span>
+							<strong>Windows</strong>
+						</div>
+					</a>
+					<a class="cf_" target="_blank" href="https://github.com/RocketChat/Rocket.Chat.Electron/releases/download/v0.0.8/rocketchat_0.0.8-linux.deb">
+						<img src="/images/download/linux.svg" />
+						<div>
+							<span>Download for</span>
+							<strong>Linux</strong>
+						</div>
+					</a>
+				</div>
+				<div class="access">
+					<a class="button red" target="_blank" href="https://demo.rocket.chat"><i class="icon-link"></i><span>Online Live Demo</span></a>
+					<a class="button grey" target="_blank" href="https://github.com/RocketChat/Rocket.Chat"><i class="icon-github-circled"></i><span>Source Code</span></a>
+				</div>
+			</div>
+			<div id="particles-js"></div>
+		</section>
+
+		<section id="live-demo" class="live-demo">
+			<div class="wrapper">
+				<h2>
+					<span>Access our</span>
+					<span>live demo</span>
+				</h2>
+				<p>Check out a full featured live demo of our platform.</p>
+				<a href="https://demo.rocket.chat" class="mockup">
+					<img src="/images/mockup.png" alt="Rocket Chat Mockup" />
+				</a>
+				<a class="button teal" target="_blank" href="https://demo.rocket.chat"><i class="icon-link"></i><span>Access the live demo</span></a>
+			</div>
+		</section>
+
+		<section id="features" class="features">
+			<div class="wrapper">
+				<h2>
+					<span>Highlighted</span>
+					<span>Features</span>
+				</h2>
+				<p>Packages are at the core of Rocket.Chat capabilities, offering an impressive array of features aimed at making your business succeed:</p>
+				<ul>
+					<li>
+						<div>
+							<i class="icon-videocam"></i>
+						</div>
+						<h3>Video Conference</h3>
+						<span>Chat with your colleagues and friends face-to-face over audio and video.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-chat"></i>
+						</div>
+						<h3>Helpdesk Chat</h3>
+						<span>Have your website visitors contact you in real-time and increase conversions.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-doc-text-inv"></i>
+						</div>
+						<h3>File Sharing</h3>
+						<span>Drag-and-drop files or select them from your computer or mobile device.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-mic"></i>
+						</div>
+						<h3>Voice Messages</h3>
+						<span>Record and transmit voice messages to a channel, group or private conversation.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-eye"></i>
+						</div>
+						<h3>Link Preview</h3>
+						<span>Post a link and immediately view its content. YouTube, Twitter, Gifs!</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-code"></i>
+						</div>
+						<h3>API</h3>
+						<span>Integrate your chat to multiple services: GitHub, GitLab, JIRA, Confluence and others.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-puzzle"></i>
+						</div>
+						<h3>Extendability</h3>
+						<span>Want a new killing feature? Add a new package. It's as simple as that.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-laptop"></i>
+						</div>
+						<h3>Native Applications</h3>
+						<span>Native client applications available for download on Linux, Windows and OSX.</span>
+					</li>
+					<li>
+						<div>
+							<i class="icon-mobile"></i>
+						</div>
+						<h3>Mobile Applications</h3>
+						<span>Mobile client applications available for iOS and Android on their respective stores.</span>
+					</li>
+				</ul>
+			</div>
+
+		</section>
+		<section id="rocket-team" class="team">
+			<div class="wrapper">
+				<h2>
+					<span>Get to know the</span>
+					<span>rocket team</span>
+				</h2>
+				<p>Although there are lots of collaborators to Rocket.Chat, these are the people actively maintaining it and building a community of developers:</p>
+				<ul>
+					<li>
+						<a target="_blank" href="https://github.com/engelgabriel" style="background-image: url(https://avatars1.githubusercontent.com/u/1000217?v=3&amp;s=460)" title="Gabriel Engel (Founder &amp; CEO)"></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://github.com/sampaiodiego" style="background-image: url(https://avatars3.githubusercontent.com/u/8591547?v=3&amp;s=460)" title="Diego Sampaio (Developer)"></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://github.com/marceloschmidt" style="background-image: url(https://avatars1.githubusercontent.com/u/1986378?v=3&amp;s=460)" title="Marcelo Schmidt (Developer)"></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://github.com/rodrigok" style="background-image:url(https://avatars2.githubusercontent.com/u/234261?v=3&amp;s=460)" title="Rodrigo Nascimento (Developer)"></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://github.com/rcaferati" style="background-image: url(https://avatars2.githubusercontent.com/u/8358797?v=3&amp;s=460)" title="Rafael Caferati (UX Architect)"></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://github.com/Sing-Li" style="background-image: url(https://avatars3.githubusercontent.com/u/122633?v=3&amp;s=460)" title="Sing Li (Developer)"></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://github.com/geekgonecrazy" style="background-image: url(https://avatars0.githubusercontent.com/u/51996?v=3&amp;s=460)" title="Aaron Ogle (Developer)"></a>
+					</li>
+				</ul>
+				<footer>
+					<small>Rocket.Chat © 2015</small>
+				</footer>
+			</div>
+		</section>
 	</div>
-	<a class='text braziljs' style="background-color: black; padding: 20px; display: block;" href="http://braziljs.com.br/" target="_blank">
-		<h2 class="birthday">Celebrating the 20th anniversary of JavaScript</h2>
-		<h2 class="lauching">We are lauching our Public Beta</h2>
-		<h3 class="slogan">At the greatest Javascript conference in the Universe</h3>
-		<img class="braziljs" src="/images/braziljs.svg" alt="braziljs logo" style="max-width: 200px; margin: auto; padding: 20px; display: block;">
-		<span class="date-local">August 21 and 22 | Porto Alegre, RS, Brazil</span>
-	</a>
-	<div class='text'>
-		<a class="button" href="https://demo.rocket.chat"><span>{{_ "Access_Online_Demo"}}</span></a>
+	<div id="pre-loader">
+		<span></span>
 	</div>
 </template>
