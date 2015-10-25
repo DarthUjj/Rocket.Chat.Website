@@ -4,63 +4,59 @@
 			<h1>
 				Deploy your own instance in seconds!
 			</h1>
-			<div class="static-content">
-				<div class="deploy -box">
-					<form id="deployForm">
-						{{#if $eq section 'email'}}
-							<div>
-								<label for="email">Enter your <b>e-mail address</b></label>
-								<div>
-									<input type="email" id="email" name="email" placeholder="you@yourdomain.com">
-								</div>
-							</div>
+			<form id="deployForm">
+				{{#if $eq section 'email'}}
+					<div>
+						<label for="email">Enter your <b>e-mail address</b></label>
+						<div>
+							<input type="email" id="email" name="email" placeholder="you@yourdomain.com">
+						</div>
+					</div>
 
-							<div class="buttons-section">
-								<button type="button" class="button teal button-next">
-									Next <i class="icon-right-open"></i>
-								</button>
-							</div>
-						{{/if}}
+					<div class="buttons-section">
+						<button type="button" class="button teal button-next">
+							Next <i class="icon-right-open"></i>
+						</button>
+					</div>
+				{{/if}}
 
-						{{#if $eq section 'name'}}
-							<div>
-								<label for="name"><b>Application name</b></label>
-								<div>
-									<input type="text" id="name" name="name" placeholder="Ex. My awesome chat">
-								</div>
-							</div>
+				{{#if $eq section 'name'}}
+					<div>
+						<label for="name"><b>Application name</b></label>
+						<div>
+							<input type="text" id="name" name="name" placeholder="Ex. My awesome chat">
+						</div>
+					</div>
 
-							<div class="buttons-section">
-								<button type="button" class="button gray button-icon-left button-back">
-									<i class="icon-left-open"></i> Back
-								</button>
-								<button type="button" class="button teal button-next">
-									Next <i class="icon-right-open"></i>
-								</button>
-							</div>
-						{{/if}}
+					<div class="buttons-section">
+						<button type="button" class="button gray button-icon-left button-back">
+							<i class="icon-left-open"></i> Back
+						</button>
+						<button type="button" class="button teal button-next">
+							Next <i class="icon-right-open"></i>
+						</button>
+					</div>
+				{{/if}}
 
-						{{#if $eq section 'domain'}}
-							<div>
-								<label for="domain"><b>Your Rocket.Chat URL</b></label>
-								<div>
-									<div class="input">
-										http://<div class="editable" contenteditable>asd</div>.rocket.chat
-									</div>
-								</div>
+				{{#if $eq section 'domain'}}
+					<div>
+						<label for="domain"><b>Your Rocket.Chat URL</b></label>
+						<div>
+							<div class="input">
+								http://<div class="editable" contenteditable>asd</div>.rocket.chat
 							</div>
-							<div class="buttons-section">
-								<button type="button" class="button gray button-icon-left button-back">
-									<i class="icon-left-open"></i> Back
-								</button>
-								<button class="button blue">
-									Finish <i class="icon-right-open"></i>
-								</button>
-							</div>
-						{{/if}}
-					</form>
-				</div>
-			</div>
+						</div>
+					</div>
+					<div class="buttons-section">
+						<button type="button" class="button gray button-icon-left button-back">
+							<i class="icon-left-open"></i> Back
+						</button>
+						<button class="button blue">
+							Finish <i class="icon-right-open"></i>
+						</button>
+					</div>
+				{{/if}}
+			</form>
 		</div>
 	</section>
 </template>
