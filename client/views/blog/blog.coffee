@@ -10,6 +10,8 @@ Template.blog.helpers
 		return tags.indexOf(value) isnt -1
 	tags: ->
 		return Template.instance().tags?.get()
+	textSearch: ->
+		return Session.get 'blogSearch'
 
 Template.blog.events
 	'click .load-more button': (e) ->

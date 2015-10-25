@@ -12,8 +12,26 @@ Template.contact.events
 			t.clearForm()
 
 Template.contact.onCreated ->
-	tpl = @
-	tpl.clearForm = ->
-		$(tpl.find('input[name=name]')).val('')
-		$(tpl.find('input[name=email]')).val('')
-		$(tpl.find('textarea[name=message]')).val('')
+	@clearForm = =>
+		$(@findAll('input')).val('')
+		$(@findAll('textarea')).val('')
+
+	@validate = =>
+		name = $(@find('input[name=name]')).val()
+		email = $(@find('input[name=email]')).val()
+
+		emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
+
+		unless name.length
+			toastr.warning 'Please write your name so we know who we\'re speaking with.'
+			return false
+
+		unless emailPattern.test email
+			toastr.error 'The e-mail is invalid.'
+			return false
+
+		unless message.length
+			toastr.warning 'You should try writing a message first.'
+			return false
+
+		return true
