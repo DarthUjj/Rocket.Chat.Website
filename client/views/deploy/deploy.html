@@ -1,33 +1,63 @@
 <template name="deploy">
-	<section class="page-section">
-		<div class="wrapper">
-			<header>
-				<h1>Deploy your own instance in seconds!</h1>
-			</header>
+	<section class="deploy-section">
+		<div class="internal-panel">
+			<h1>
+				Deploy your own instance in seconds!
+			</h1>
 			<div class="static-content">
 				<div class="deploy -box">
 					<form id="deployForm">
-						<div>
-							<label for="name">Application Name</label>
+						{{#if $eq section 'email'}}
 							<div>
-								<input type="text" id="name" name="name">
+								<label for="email">Enter your <b>e-mail address</b></label>
+								<div>
+									<input type="email" id="email" name="email" placeholder="you@yourdomain.com">
+								</div>
 							</div>
-						</div>
-						<div>
-							<label for="email">Email</label>
+
+							<div class="buttons-section">
+								<button type="button" class="button teal button-next">
+									Next <i class="icon-right-open"></i>
+								</button>
+							</div>
+						{{/if}}
+
+						{{#if $eq section 'name'}}
 							<div>
-								<input type="email" id="email" name="email">
+								<label for="name"><b>Application name</b></label>
+								<div>
+									<input type="text" id="name" name="name" placeholder="Ex. My awesome chat">
+								</div>
 							</div>
-						</div>
-						<div>
-							<label for="domain">Domain</label>
+
+							<div class="buttons-section">
+								<button type="button" class="button gray button-icon-left button-back">
+									<i class="icon-left-open"></i> Back
+								</button>
+								<button type="button" class="button teal button-next">
+									Next <i class="icon-right-open"></i>
+								</button>
+							</div>
+						{{/if}}
+
+						{{#if $eq section 'domain'}}
 							<div>
-								http://<input type="text" id="domain" name="domain">.rocket.chat
+								<label for="domain"><b>Your Rocket.Chat URL</b></label>
+								<div>
+									<div class="input">
+										http://<div class="editable" contenteditable>asd</div>.rocket.chat
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="submit">
-							<button type="submit" class="-btn primary"><span>Deploy my instance</span></button>
-						</div>
+							<div class="buttons-section">
+								<button type="button" class="button gray button-icon-left button-back">
+									<i class="icon-left-open"></i> Back
+								</button>
+								<button class="button blue">
+									Finish <i class="icon-right-open"></i>
+								</button>
+							</div>
+						{{/if}}
 					</form>
 				</div>
 			</div>

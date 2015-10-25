@@ -17,6 +17,22 @@ Template.deploy.events
 				toastr.success 'You have successfully deployed your instance.'
 				t.clearForm()
 
+	'click .button-next': ->
+		section = Session.get('deploy-section') or 'email'
+		switch section
+			when 'email'
+				Session.set('deploy-section', 'name')
+			when 'name'
+				Session.set('deploy-section', 'domain')
+
+	'click .button-back': ->
+		switch Session.get('deploy-section')
+			when 'domain'
+				Session.set('deploy-section', 'name')
+			when 'name'
+				Session.set('deploy-section', 'email')
+
+
 Template.deploy.onCreated ->
 	PageLoader.clear()
 
@@ -45,3 +61,7 @@ Template.deploy.onCreated ->
 			return false
 
 		return true
+
+Template.deploy.helpers
+	section: ->
+		return Session.get('deploy-section') or 'email'

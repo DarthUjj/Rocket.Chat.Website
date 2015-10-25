@@ -72,7 +72,7 @@ mongo@1.1.2
 mongo-id@1.0.1
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
-nvd3:nvd3@1.8.1-dev
+nvd3:nvd3@1.8.1
 oauth@1.1.6
 oauth2@1.1.5
 observe-sequence@1.0.7
