@@ -54,12 +54,18 @@
 						</div>
 					</div>
 					<div class="buttons-section">
-						<button type="button" class="button gray button-icon-left button-back">
-							<i class="icon-left-open"></i> Back
-						</button>
-						<button class="button blue">
-							Finish <i class="icon-right-open"></i>
-						</button>
+						{{#if deploying}}
+							<button type="button" class="button gray" disabled="true">
+								Deploying...
+							</button>
+						{{else}}
+							<button type="button" class="button gray button-icon-left button-back">
+								<i class="icon-left-open"></i> Back
+							</button>
+							<button class="button blue">
+								Finish <i class="icon-right-open"></i>
+							</button>
+						{{/if}}
 					</div>
 				{{/if}}
 

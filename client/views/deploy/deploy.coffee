@@ -68,14 +68,25 @@ Template.deploy.events
 				value.domain = domainValue
 				Session.set('deploy-value', value)
 
+				Session.set('deploying', true)
+
 				Meteor.call 'Deploy.newInstance', value.name, value.email, value.domain, (err) ->
 					toastr.clear()
 					if err?.error is 'too-many-requests'
 						time = parseInt(err.details.timeToReset / 1000)
+						Session.set('deploying', false)
 						return toastr.warning "Too many requests. Please wait #{time} seconds before trying again."
 
+					if err?.reason is "Value for field domain must be unique [utils-internal-error]"
+						Session.set('deploying', false)
+						return toastr.warning "The domain http://#{value.domain}.rocket.chat was aready taken."
+
 					return toastr.error err.reason if err
-					Session.set('deploy-section', 'deployed')
+
+					Meteor.setTimeout ->
+						Session.set('deploying', false)
+						Session.set('deploy-section', 'deployed')
+					, 10000
 
 
 	'click .button-back': ->
@@ -101,3 +112,6 @@ Template.deploy.helpers
 
 	value: ->
 		return Session.get('deploy-value') or {}
+
+	deploying: ->
+		return Session.get('deploying')
