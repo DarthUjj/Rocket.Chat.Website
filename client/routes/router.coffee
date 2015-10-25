@@ -13,6 +13,11 @@ Router.route '/',
 	action: ->
 		this.render 'index'
 
+Router.route '/deploy',
+	name: 'deploy'
+	action: ->
+		this.render('deploy')
+
 Router.route '/blog',
 	name: 'blog'
 	action: ->

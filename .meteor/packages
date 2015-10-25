@@ -42,3 +42,4 @@ momentjs:moment
 chrismbeckett:toastr
 monbro:mongodb-mapreduce-aggregation
 nvd3:nvd3
+ddp-rate-limiter

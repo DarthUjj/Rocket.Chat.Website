@@ -1,0 +1,56 @@
+{
+  "_id": "rocketchat:Instance:view:Default",
+  "document": "Instance",
+  "label": {
+    "en": "{code} - {name}",
+    "pt_BR": "{code} - {name}"
+  },
+  "name": "Default",
+  "namespace": "rocketchat",
+  "plurals": {
+    "en": "New Instance",
+    "pt_BR": "Nova Instância"
+  },
+  "type": "view",
+  "visuals": [
+    {
+      "type": "visualGroup",
+      "style": {
+        "title": "Formulário"
+      },
+      "visuals": [
+        {
+          "visuals": [
+            {
+              "type": "visualSymlink",
+              "style": {
+                "readOnlyVersion": true
+              },
+              "fieldName": "code"
+            },
+            {
+              "type": "visualSymlink",
+              "fieldName": "name"
+            },
+            {
+              "type": "visualSymlink",
+              "fieldName": "email"
+            },
+            {
+              "type": "visualSymlink",
+              "fieldName": "domain"
+            }
+          ],
+          "type": "visualGroup",
+          "style": {
+            "icon": "info-sign"
+          },
+          "label": {
+            "en": "Information",
+            "pt_BR": "Informações"
+          }
+        }
+      ]
+    }
+  ]
+}
