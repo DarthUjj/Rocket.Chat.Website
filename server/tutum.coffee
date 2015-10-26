@@ -7,7 +7,8 @@
 
 	getRedis = ->
 		result = run 'GET', '/api/v1/service/', { params: { name: 'redis' } }
-		return result?.data?.objects?[0]?.public_dns
+		# return result?.data?.objects?[0]?.public_dns
+		return result?.data?.objects?[0]?.resource_uri
 
 	getMongo = ->
 		result = run 'GET', '/api/v1/service/', { params: { name: 'mongo' } }
@@ -38,7 +39,7 @@
 			}
 			{
 				key: 'TUTUM_REDIS_HOST'
-				value: "redis://:ABC123@#{redisService}:6379"
+				value: "redis://:ABC123@redis:6379"
 			}
 			{
 				key: 'TUTUM_CLIENT_NAME'
@@ -57,6 +58,10 @@
 			{
 				"to_service": mongoService,
 				"name": "mongo"
+			}
+			{
+				"to_service": redisService,
+				"name": "redis"
 			}
 		]
 		data.tags = [
