@@ -34,4 +34,4 @@ DDPRateLimiter.addRule
 	type: 'method'
 	name: 'Deploy.newInstance'
 	connectionId: -> return true
-, 1, 60000
+, 1, 10000
