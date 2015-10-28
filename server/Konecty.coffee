@@ -1,6 +1,7 @@
 @Konecty = new class
 	constructor: ->
-		@connection = DDP.connect process.env.KONECTY_URL
+		if process.env.KONECTY_URL?
+			@connection = DDP.connect process.env.KONECTY_URL
 
 	processSubmit: (data) ->
 		data = _.extend data,
