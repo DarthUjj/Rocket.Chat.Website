@@ -49,7 +49,7 @@ Template.deploy.events
 
 			when 'domain'
 				domain = t.$('.editable')
-				domainValue = domain[0].innerText.trim().toLowerCase()
+				domainValue = domain.text().trim().toLowerCase()
 
 				if domainValue.length < 3
 					toastr.error 'The domain is invalid. Please use at least 3 characters.'
